@@ -1,0 +1,32 @@
+##Test
+def get_number(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            
+def get_op(prompt):
+    while True:
+        op = input(prompt)
+        if len(op) == 1 and op in "+-*/":
+            return op
+        print("Invalid operator. Please enter +, -, *, or /")
+            
+print("Python Calculator")
+
+num1 = get_number("Enter first number: ")
+op = get_op("Enter operator (+, -, *, /): ")
+num2 = get_number("Enter second number: ")
+    
+if op == "+":
+    print(num1 + num2)
+elif op == "-":
+    print(num1 - num2)
+elif op == "*":
+    print(num1 * num2)
+elif op == "/":
+    try:
+        print(num1 / num2)
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
